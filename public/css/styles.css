@@ -1,0 +1,145 @@
+/*подключение шрифтов*/
+@font-face {
+    font-family:SegoeUi;
+    src: url(/fonts/SegoeUI/SegoeUIRegular/SegoeUIRegular.ttf);
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family:SegoeUi;
+    src: url(/fonts/SegoeUI/SegoeUIBold/SegoeUIBold.ttf);
+    font-weight: bold;
+    font-style: normal;
+}
+@font-face {
+    font-family:SegoeUi;
+    src: url(/fonts/SegoeUI/SegoeUIItalic/SegoeUIItalic.ttf);
+    font-weight: normal;
+    font-style: italic;
+}
+
+html, body{height: 100%; font-family: SegoeUi, Arial, Helvetica, sans-serif }
+
+.left{float: left;}
+.right{float: right;}
+
+.navbar{margin: 0;}
+
+/*p*/
+p{font-size: 15px;}
+.txt-bold{color: #2a2625;font-weight: bold;}
+
+a{color: #000; font-weight: bold;}
+a:hover{color: #000;}
+
+h1{text-shadow:0 -2px 9px #fff;}
+h2{text-transform: uppercase; font-size: 34px; text-align: center;}
+
+.col-xs-1-5, .col-sm-1-5, .col-md-1-5, .col-lg-1-5 {  position: relative;  min-height: 1px;  padding-right: 10px;  padding-left: 10px;}
+.col-xs-1-5 { width: 20%;  float: left;}
+
+@media (min-width: 768px) {
+  .col-sm-1-5 {
+    width: 20%;
+    float: left;
+  }
+}
+
+@media (min-width: 992px) {
+  .col-md-1-5 {
+    width: 20%;
+    float: left;
+  }
+}
+
+@media (min-width: 1200px) {
+  .col-lg-1-5 {
+    width: 20%;
+    float: left;
+  }
+}
+
+
+
+
+/*main-page*/
+#slider img, #we-service img, #unique-offer img{max-width: 100%;}
+
+header{background: url('/img/bg/TOP-bg.png') no-repeat; background-size:cover;  }
+header .top-block{padding-top:20px; padding-bottom: 25px}
+header h1 span{font-size: 24px;}
+header .address{margin-top: 25px;}
+header .navbar{background: #000; border-top: 2px solid #a67e4a; border-bottom: none; }
+header .navbar-nav>.active>a{background-color: #a67e4a; }
+header .navbar-nav a{ margin-top: 2px; color: #fcfcfc; font-weight: normal;}
+header .navbar-nav a:hover{color: #a67e4a; }
+header .navbar-nav>.active>a:hover{color: #fff; }
+header .navbar-toggle .icon-bar { background-color: #fff;}
+
+
+#slider{background: url('/img/bg/istart-img.png') no-repeat; background-size:cover; }
+#slider .head-slide{border-top: 1px solid #ffedb7; border-bottom: 1px solid #ffedb7;}
+#slider .head-slide p{text-transform: uppercase; font-size: 13px; color: #ffedb7;}
+#slider .head-slide h2{font-size: 28px; color: #fff}
+#slider .head-slide  img{margin-top: 25px;}
+#slider .head-slide .block{height: 175px;}
+
+#slider .circles{margin: 100px auto 70px}
+#slider .circles .img-circle{width: 200px; height: 200px; display: flex; background: #fff; border: 10px solid #ffedb7}
+#slider .circles .img-circle p{margin: auto; font-size: 20px}
+#slider .circles .square {width: 225px; height: 225px; display: none; position: absolute; top:0;
+  color: #fff; background: rgba(0,0,0,0.5);}
+#slider .block:hover .square{display: flex;}
+#slider .block:hover .img-circle{display: none;}
+#slider .circles .square p{margin: auto; text-align: left; padding: 10px;}
+
+#we-service{padding-bottom: 50px;}
+#we-service h2{margin: 50px 0 30px }
+#we-service p{color: #76604c; font-size: 16px;}
+
+#work-package{background: #515458 url('/img/bg/Electrik_bg.png') no-repeat; color: #fff; padding:  0;}
+#work-package h2{color: #fff; margin-top: 50px;}
+#work-package b{color: #ffedb7;}
+#work-package .block-right{background: #3c4047; padding: 50px 10px; border:5px solid #515458; }
+
+#advantage h2{margin: 50px 0;}
+#advantage h2 span{ font-size: 20px; font-weight: bold; }
+#advantage .txt-light{color: #b19a6d; font-weight: bold; }
+#advantage img{max-width: 100%;}
+#advantage .btn-yellow{background: #fff2b8; padding: 10px 30px; margin:40px 10px;}
+
+#scheme-work {background:#ebebeb; padding: 30px 0;}
+#scheme-work h2{margin: 20px 0 30px;}
+#scheme-work .ch-img {text-align: center; height: 120px; border-bottom: 1px solid #998675;}
+#scheme-work .ch-txt{color:#696866; padding-top: 10px;}
+#scheme-work .img-circle{margin: 15px auto; background: #3c4047; height: 70px; width: 70px; border: 5px solid #e2d2ae; padding: 10px; color: #fff; font-size: 24px;}
+
+#unique-offer{background: #3c4047; padding: 30px 0 70px; }
+#unique-offer h2{margin: 20px 0 50px;  color: #fff;}
+#unique-offer .img{margin: 0; padding: 0}
+#unique-offer .white-block{background: #fff; }
+#unique-offer .sale-red p{  font-size: 36px; color: #fff; font-weight: bold; text-align: center; padding: 30px;  background: #f26522;
+    -moz-transform: rotate(-15deg); /* Для Firefox */
+    -ms-transform: rotate(-15deg); /* Для IE */
+    -webkit-transform: rotate(-15deg); /* Для Safari, Chrome, iOS */
+    -o-transform: rotate(-15deg); /* Для Opera */
+    transform: rotate(-15deg);
+   }
+
+#contact{background: #646464; padding-bottom: 50px; color: #fff}
+#contact .btn{width: 100%; background: #c9c097;}
+#contact h2{margin: 50px 0;}
+#contact input{background: #e1e1e1;}
+
+footer{background: #3c4047; padding: 50px 0; color: #fff;}
+footer .title-h1{text-transform: uppercase; font-weight: bold;}
+footer .title{font-weight: bold; border-bottom: 1px solid #707070; padding-bottom: 10px;}
+
+
+@media (max-width: 768px) {
+  h2{ font-size: 25px;}
+  #slider .head-slide h2 {font-size: 20px}
+  #slider .head-slide .text-right {text-align: left;}
+  #slider .head-slide .block{min-height: 130px;}
+  #slider .head-slide .sm-hr{border-bottom: 1px solid #fff;}
+}

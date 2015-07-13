@@ -1,0 +1,10 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine on
+    RewriteCond %{REQUEST_URI} !^public
+    RewriteRule ^(.*)$ public/$1 [L]
+</IfModule>
+
+#RewriteCond %{HTTP_HOST} ^madmech.ru
+#RewriteRule ^(.*)$ http://www.madmech.ru/$1 [R=301,L]
+
+RedirectPermanent /main  http://www.madmech.ru/
