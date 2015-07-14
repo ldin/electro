@@ -15,8 +15,8 @@ return array(
 	|
 	*/
 
-	// 'driver' => 'smtp',
-	'driver' => 'mail',
+	'driver' => 'smtp',
+	// 'driver' => 'mail',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -29,8 +29,8 @@ return array(
 	|
 	*/
 
-	// 'host' => 'smtp.mailgun.org',
-	'host' => 'localhost',
+	'host' => 'smtp.yandex.ru',
+	// 'host' => 'localhost',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -44,7 +44,7 @@ return array(
 	*/
 
 	// 'port' => 587,
-	'port' => 25,
+	'port' => 465,
 
 	/*
 	|--------------------------------------------------------------------------
@@ -57,7 +57,7 @@ return array(
 	|
 	*/
 
-	'from' => array('address' => 'noreply@electromontaz.ru/', 'name' => 'electromontaz'),
+	'from' => array('address' => 'electromontaz.ru@yandex.ru', 'name' => 'electromontaz'),
 
 	/*
 	|--------------------------------------------------------------------------
@@ -70,7 +70,8 @@ return array(
 	|
 	*/
 
-	'encryption' => 'tls',
+	// 'encryption' => 'tls',
+	'encryption' => 'ssl',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -83,7 +84,7 @@ return array(
 	|
 	*/
 
-	'username' => null,
+	'username' => 'electromontaz.ru',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -96,7 +97,7 @@ return array(
 	|
 	*/
 
-	'password' => null,
+	'password' => 'Ckj;ysqgfhjkm',
 
 	/*
 	|--------------------------------------------------------------------------
