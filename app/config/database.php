@@ -55,9 +55,9 @@ return array(
 		'mysql' => array(
 			'driver'    => 'mysql',
 			'host'      => 'localhost',
-			'database'  => 'zfb7951_7951',
-			'username'  => 'zfb7951_7951',
-			'password'  => 'SeCrEt',
+			'database'  => 'ceteguxh_electro',
+			'username'  => 'ceteguxh_electro',
+			'password'  => '@nM45#tJ',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',
