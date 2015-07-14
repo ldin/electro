@@ -23,6 +23,10 @@ Route::controller('password', 'RemindersController');
 
 Route::controller('admin', 'AdminController');
 
+Route::post('/form-request', 'HomeController@postFormRequest');
+
+//all
+
 Route::post('/connect', 'HomeController@postConnect');
 Route::get('/ajax/{slug?}', 'HomeController@getAjax');
 Route::get('/search/autocomplete/{type}/{id?}', 'HomeController@autocomplete');

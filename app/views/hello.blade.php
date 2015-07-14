@@ -44,11 +44,11 @@
 		    <div class="collapse navbar-collapse" id="navbar-main-menu">
 		      <ul class="nav navbar-nav">
 		        <li class="active"><a href="#">О нас <span class="sr-only">(current)</span></a></li>
-		        <li><a href="#">Цены</a></li>
-		        <li><a href="#">Галерея работ</a></li>
-		        <li><a href="#">Рекомендации</a></li>
-		        <li><a href="#">Контакты</a></li>
-		        <li><a href="#">Партнеры</a></li>
+		        <li><a href="#we-service">Мы обслуживаем</a></li>
+		        <li><a href="#advantage">Наше преимущество</a></li>
+		        <li><a href="#scheme-work">Схема работы</a></li>
+		        <li><a href="#unique-offer">Уникальное предложение</a></li>
+		        <li><a href="#contact">Контакты</a></li>
 		      </ul>
 		    </div><!-- /.navbar-collapse -->
 		  </div><!-- /.container-fluid -->
@@ -220,8 +220,8 @@
 					</div>
 				</div>
 				<div class="text-center">
-					<a href="#" class="btn btn-yellow">Заказать звонок</a>
-					<a href="#" class="btn btn-yellow">Оставить заявку</a>
+					<a href="#contact" class="btn btn-yellow">Заказать звонок</a>
+					<a href="#contact" class="btn btn-yellow">Оставить заявку</a>
 				</div>
 			</div>
 		</section>
@@ -244,7 +244,7 @@
 							<p>Коммерческое предложение</p>
 						</div>
 						<div class="ch-txt">
-							<p>Вы получите Коммерческое предложение в течение рабочего дня/p>
+							<p>Вы получите Коммерческое предложение в течение рабочего дня</p>
 						</div>
 					</div>
 					<div class="col-sm-1-5 col-xs-12">
@@ -302,7 +302,7 @@
 					</div>
 					<div class="col-xs-12 col-sm-6">
 						На розетки, выключатели и другие электроустановачные изделия мировых брендов Гира, Юнг, БТчино, Мертен, Беркер и др. для заказчиков полного комплекта электромонтажных работ действует скидка до 30% от цены, рекомендованной их официальными представителями.
-						Заканные позиции регистрируются у оффициальных представителей по адресу вашего объекта и становятся на гарантию.
+						Заказанные позиции регистрируются у официальных представителей по адресу вашего объекта и становятся на гарантию.
 					</div>
 					<div class="col-xs-12 col-sm-3 text-center">
 						{{ HTML::image('/img/baners/prop_logo01.png', 'proposal', ['class'=>'']) }}
@@ -320,30 +320,44 @@
 				<div class="row">
 					<div class="col-xs-12 col-sm-8 col-sm-offset-2">
 
-						<form>
+					    @if(Session::has('successRequest'))
+			              <div class="alert alert-success text-center">
+			                <button type="button" class="close" data-dismiss="alert">×</button>
+			                {{ Session::get('successRequest') }}
+			              </div>
+			            @endif
+
+			            @if(Session::has('errorRequest'))
+			              <div class="alert alert-danger text-center">
+			                <button type="button" class="close" data-dismiss="alert">×</button>
+			                {{ Session::get('errorRequest') }}
+			              </div>
+			            @endif
+
+						<form method="POST" action="/form-request"  role="form">
 							<div class="row">
 								<div class="col-xs-12 col-sm-6">
 								  	<div class="form-group">
 									    <label for="inputName" class="sr-only">Имя</label>
-									    <input type="text" class="form-control" id="inputName" placeholder="Ваше имя">
+									    <input type="text" name="name" class="form-control" id="inputName" placeholder="Ваше имя">
 									  </div>
 									  <div class="form-group">
 									    <label for="inputEmail" class="sr-only">Email</label>
-									    <input type="email" class="form-control" id="inputEmail" placeholder="Ваш e-mail">
+									    <input type="email" name="email" class="form-control" id="inputEmail" placeholder="Ваш e-mail">
 									  </div>
 									  <div class="form-group">
 									    <label for="inputPhohe" class="sr-only">Email address</label>
-									    <input type="phone" class="form-control" id="inputPhohe" placeholder="Ваш телефон">
+									    <input type="phone" name="phone" class="form-control" id="inputPhohe" placeholder="Ваш телефон">
 									  </div>
 									  <div class="form-group">
 									    <label for="inputQuestion" class="sr-only">Ваш вопрос</label>
-									    <input type="textarea" class="form-control" id="inputQuestion" placeholder="Ваш вопрос">
+									    <input type="textarea" name="text" class="form-control" id="inputQuestion" placeholder="Ваш вопрос">
 									  </div>
 								</div>
 								<div class="col-sm-6 hidden-xs">
 									<p>По этому имени мы будем к Вам обращаться</p>
 									<br>
-									<p>Мы свяжемяся с вами по телефону или электронной почте</p>
+									<p>Мы свяжемся с вами по телефону или электронной почте</p>
 									<br>
 								</div>
 							</div>

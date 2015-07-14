@@ -23,6 +23,51 @@ class HomeController extends BaseController {
         ]);
     }
 
+    public function postFormRequest()
+    {
+            $all = Input::all();
+            // var_dump($all); die();
+
+            $rules = array(
+                // 'name' => 'required|min:2|max:255',
+            );
+
+            $validator = Validator::make($all, $rules);
+            if ( $validator -> fails() ) {
+                return Redirect::to('/#contact')
+                        ->withErrors($validator)
+                        ->withInput()
+                        ->with('errorRequest', 'Ошибка');
+            }
+
+            // $post = new Request();
+            // $post->name = $all['name'];
+            // $post->phone = $all['phone'];
+            // $post->email = $all['email'];
+            // $post->text = $all['text'];
+
+            // $mail = Setting::where('name', 'email')->first();
+            $mail = 'ldin04ka@mail.ru';
+             //var_dump($mail->value); die();
+
+            $messages = '<b>Пользователь: </b>'.$all['name'].'<br>';
+            $messages .= '<b>Вопрос: </b>'.$all['text'].'<br>';
+            $messages .= '<b>Контактные данные: </b>'.'<br>';
+            $messages .= '<i>Телефон: </i>'.$all['phone'].'<br>';
+            $messages .= '<i>Емайл: </i>'.$all['email'].'<br>';
+
+                Mail::send('emails.message',
+                    array('messages' => $messages ),
+                    function ($message) use ($mail)  {
+                        $message->to($mail)->subject('Обращение посетителя');
+                    }
+                );
+
+            return Redirect::to('/#contact')
+                    ->with('successRequest', 'Сообщение отправлено');
+    }
+
+//old
     public function showWelcome()
     {
         $slides = Slider::where('status', 1)->get();
