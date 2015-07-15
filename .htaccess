@@ -4,7 +4,8 @@
     RewriteRule ^(.*)$ public/$1 [L]
 </IfModule>
 
-#RewriteCond %{HTTP_HOST} ^electromontaz.ru
-#RewriteRule ^(.*)$ http://www.electromontaz.ru/$1 [R=301,L]
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^electromontaz.ru
+RewriteRule ^(.*)$ http://www.electromontaz.ru/$1 [R=301,L]
 
 RedirectPermanent /main  http://www.electromontaz.ru/
