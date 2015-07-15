@@ -45,22 +45,25 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="navbar-main-menu">
               <ul class="nav navbar-nav">
-                <li class="active"><a href="#">О нас <span class="sr-only">(current)</span></a></li>
-                <li><a href="#">Цены</a></li>
-                <li><a href="#">Галерея работ</a></li>
-                <li><a href="#">Рекомендации</a></li>
-                <li><a href="#">Контакты</a></li>
-                <li><a href="#">Партнеры</a></li>
+                <li {{ (Request::is('/')) ? 'class="active"' : '' }}><a href="/">О нас <span class="sr-only">(current)</span></a></li>
+
+                @if(isset($type_page))
+                    @foreach($type_page as$type=>$page)
+                        <li {{ (Request::is($type.'*')) ? 'class="active"' : '' }}>{{HTML::link($type, $page)}}</li>
+                    @endforeach
+                @endif
+
               </ul>
             </div><!-- /.navbar-collapse -->
           </div><!-- /.container-fluid -->
         </nav>
     </header>
 
-    @yield('content')
+    <main>
 
+        @yield('content')
 
-
+    </main>
 
     <footer>
         <div class="container">

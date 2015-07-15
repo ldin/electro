@@ -22,9 +22,9 @@ return array(
 		'mysql' => array(
 			'driver'    => 'mysql',
 			'host'      => 'localhost',
-			'database'  => 'electro',
+			'database'  => 'sitesnew',
 			'username'  => 'root',
-			'password'  => 'gfhjkm',
+			'password'  => 'newpass',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',

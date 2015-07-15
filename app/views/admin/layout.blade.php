@@ -66,7 +66,7 @@
            -->
            <ul class="nav navbar-nav navbar-right">
              <li>
-                <?php echo HTML::decode(HTML::link('/', '<i class="glyphicon glyphicon-home"></i>&nbsp;TIERA', array('class'=>'addNews'))); ?>
+                <?php echo HTML::decode(HTML::link('/', '<i class="glyphicon glyphicon-home"></i>&nbsp;SITE', array('class'=>'addNews'))); ?>
              </li>
              <li class="dropdown">
                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Настройки <b class="caret"></b></a>

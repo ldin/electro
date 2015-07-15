@@ -18,7 +18,11 @@
     font-style: italic;
 }
 
-html, body{height: 100%; font-family: SegoeUi, Arial, Helvetica, sans-serif }
+html{position: relative; min-height: 100%; font-family: SegoeUi, Arial, Helvetica, sans-serif }
+
+body { margin: 0 0 250px; }
+footer { position: absolute; bottom: 0; height: 250px; width: 100%;}
+
 
 .left{float: left;}
 .right{float: right;}

@@ -40,15 +40,16 @@ class HomeController extends BaseController {
                         ->with('errorRequest', 'Ошибка');
             }
 
-            // $post = new Request();
-            // $post->name = $all['name'];
-            // $post->phone = $all['phone'];
-            // $post->email = $all['email'];
-            // $post->text = $all['text'];
+            $post = new Request();
+            $post->name = $all['name'];
+            $post->phone = $all['phone'];
+            $post->email = $all['email'];
+            $post->text = $all['text'];
+            $post->save();
 
             // $mail = Setting::where('name', 'email')->first();
-            // $mail = 'ldin04ka@mail.ru';
-            $mail = 'cenoura@yandex.ru';
+            $mail = 'ldin04ka@mail.ru';
+            // $mail = 'cenoura@yandex.ru';
              //var_dump($mail->value); die();
 
             $messages = '<b>Пользователь: </b>'.$all['name'].'<br>';
