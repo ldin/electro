@@ -4,7 +4,6 @@
     RewriteRule ^(.*)$ public/$1 [L]
 </IfModule>
 
-RewriteEngine on
 RewriteCond %{HTTP_HOST} ^electromontaz.ru
 RewriteRule ^(.*)$ http://www.electromontaz.ru/$1 [R=301,L]
 
