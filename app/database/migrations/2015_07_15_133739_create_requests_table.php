@@ -12,7 +12,7 @@ class CreateRequestsTable extends Migration {
 	 */
 	public function up()
 	{
-        Schema::create('Requests', function($table) {
+        Schema::create('requests', function($table) {
             $table->increments('id');
             $table->string('email')->unique();
             $table->string('name');
@@ -31,7 +31,7 @@ class CreateRequestsTable extends Migration {
 	 */
 	public function down()
 	{
-        Schema::drop('Requests');		//
+        Schema::drop('requests');		//
 	}
 
 }
