@@ -40,7 +40,7 @@ class HomeController extends BaseController {
                         ->with('errorRequest', 'Ошибка');
             }
 
-            $post = new Request();
+            $post = new Requests();
             $post->name = $all['name'];
             $post->phone = $all['phone'];
             $post->email = $all['email'];

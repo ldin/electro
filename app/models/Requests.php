@@ -1,7 +1,7 @@
 <?php
 use Illuminate\Database\Eloquent\SoftDeletingTrait;
 
-class Request extends Eloquent
+class Requests extends Eloquent
 {
 
     protected $table = 'requests';
