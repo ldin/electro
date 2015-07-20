@@ -46,17 +46,19 @@
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="navbar-main-menu">
-              <ul class="nav navbar-nav">
-                <li {{ (Request::is('/')) ? 'class="active"' : '' }}><a href="/">О нас <span class="sr-only">(current)</span></a></li>
+            <div class="collapse navbar-collapse text-center" id="navbar-main-menu">
+                <div class="inline-navbar">
+                    <ul class="nav navbar-nav">
+                        <li {{ (Request::is('/')) ? 'class="active"' : '' }}><a href="/">О нас <span class="sr-only">(current)</span></a></li>
 
-                @if(isset($type_page))
-                    @foreach($type_page as$type=>$page)
-                        <li {{ (Request::is($type.'*')) ? 'class="active"' : '' }}>{{HTML::link($type, $page)}}</li>
-                    @endforeach
-                @endif
+                        @if(isset($type_page))
+                            @foreach($type_page as$type=>$page)
+                                <li {{ (Request::is($type.'*')) ? 'class="active"' : '' }}>{{HTML::link($type, $page)}}</li>
+                            @endforeach
+                        @endif
 
-              </ul>
+                  </ul>
+                </div>  
             </div><!-- /.navbar-collapse -->
           </div><!-- /.container-fluid -->
         </nav>

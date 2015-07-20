@@ -75,6 +75,7 @@ header h1 span{font-size: 24px;}
 header h1 a:hover{text-decoration: none;}
 header .address{margin-top: 25px;}
 header .navbar{background: #000; border-top: 2px solid #a67e4a; border-bottom: none; }
+header .inline-navbar {display: inline-block; margin-bottom: -5px;}
 header .navbar-nav>.active>a{background-color: #a67e4a; }
 header .navbar-nav a{ margin-top: 2px; color: #fcfcfc; font-weight: normal;}
 header .navbar-nav a:hover{color: #a67e4a; }
