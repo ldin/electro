@@ -43,10 +43,10 @@ class AdminController extends BaseController {
          );
 
         $templates = array(
-                'page-img-text'=>'Картинка-текст',
-                'page-menu-title'=>'Меню-название',
-                'page-text-data'=>'Текст-дата',
-                'page-rate'=>'Тарифы',
+                // 'page-img-text'=>'Картинка-текст',
+                // 'page-menu-title'=>'Меню-название',
+                // 'page-text-data'=>'Текст-дата',
+                // 'page-rate'=>'Тарифы',
                 'page'=>'Текст',
         );
 
