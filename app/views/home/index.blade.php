@@ -8,51 +8,50 @@
     <section id="slider">
         <div class="container">
             <div class="row head-slide">
-                <div class="col-sm-4 col-xs-12 sm-hr">
-                    <div class="row text-right block">
-                        <div class="col-xs-9 ">
-                            <h2>Безопасность</h2>
-                            <p>Охранная, пожарная сигнализации, домофония, видеонаблюдения</p>
+                
+                <div class="col-sm-4 col-xs-12">
+                    <div class="row block">
+                        <div class="col-xs-9">
+                            <h2>Наружные сети </h2>
+                            <p>кабельные и воздушные линии, уличное и ландшафтное освещение, ремонт и реконструкция поселковых сетей</p>
                         </div>
-                        <div class="col-xs-3 ">
-                            <img src="/img/fish-safe.png" alt="безопасность">
+                        <div class="col-xs-3">
+                            <img src="/img/fish-web.png" alt="безопасность">
                         </div>
                     </div>
                     <hr>
-                    <div class="row text-right block">
+                    <div class="row block">
                         <div class="col-xs-9">
-                            <h2>Мультимедийные системы</h2>
-                            <p>интернет, телевидение, акустические системы, домашние кинотеатры</p>
+                            <h2>Электромонтаж</h2>
+                            <p>освещение, электропроводка, заземление, молниезащита, организация бесперебойного питания</p>
                         </div>
-                        <div class="col-xs-3 ">
-                            <img src="/img/fish-media.png" alt="безопасность">
+                        <div class="col-xs-3">
+                            <img src="/img/fish-electro.png" alt="безопасность">
                         </div>
                     </div>
                 </div>
                 <div class="col-sm-4 hidden-xs">
                     <img src="/img/fish.png" alt="логотип">
                 </div>
-                <div class="col-sm-4 col-xs-12">
-                    <div class="row block">
-                        <div class="col-xs-3">
-                            <img src="/img/fish-web.png" alt="безопасность">
+                <div class="col-sm-4 col-xs-12 sm-hr">
+                    <div class="row text-right block">
+                        <div class="col-xs-3 ">
+                            <img src="/img/fish-safe.png" alt="безопасность">
                         </div>
-                        <div class="col-xs-9">
-                            <h2>Наружные сети </h2>
-                            <p>кабельные и воздушные линии, уличное и ландшафтное освещение, ремонт и реконструкция поселковых сетей</p>
+                        <div class="col-xs-9 ">
+                            <h2>Безопасность</h2>
+                            <p>Охранная, пожарная сигнализации, домофония, видеонаблюдения</p>
                         </div>
-
                     </div>
                     <hr>
-                    <div class="row block">
-                        <div class="col-xs-3">
-                            <img src="/img/fish-electro.png" alt="безопасность">
+                    <div class="row text-right block">
+                        <div class="col-xs-3 ">
+                            <img src="/img/fish-media.png" alt="безопасность">
                         </div>
                         <div class="col-xs-9">
-                            <h2>Электромонтаж</h2>
-                            <p>освещение, электропроводка, заземление, молниезащита, организация бесперебойного питания</p>
+                            <h2>Мультимедийные системы</h2>
+                            <p>интернет, телевидение, акустические системы, домашние кинотеатры</p>
                         </div>
-
                     </div>
                 </div>
             </div>
