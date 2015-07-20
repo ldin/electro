@@ -23,6 +23,40 @@ class HomeController extends BaseController {
         ]);
     }
 
+    public function showWelcome()
+    {
+        //$slides = Slider::where('status', 1)->get();
+        return View::make('home.index');//->with('slides',$slides);
+    }
+
+    public function getPage($type, $slug=''){
+
+        $type_post = Type::where('type', $type)->first();
+
+        if(empty($type_post)){
+            //var_dump('empty($type)'); die();
+            $post = Post::where('slug', $type)->first();
+            // var_dump( $post ); die();
+            return View::make('home.page')->with('row', $post);
+        }
+
+        $posts = Post::where('type_id',$type_post->id)->where('status',1)->where('parent',0)->orderBy('created_at', 'desc')->get();
+        $posts_child = $parent = array();
+
+        if($slug!=''){
+            $parent = Post::where('slug',$slug)->first();
+            $posts_child = Post::where('type_id',$type_post->id)->where('status',1)->where('parent','=',$parent->id)->orderBy('created_at', 'desc')->get();
+        }
+
+        $view = array(
+            'type'=>$type_post,
+            'posts'=>$posts,
+            'row' => $parent,
+            'posts_child' => $posts_child,
+        );
+        return View::make('home.'.$type_post->template, $view);
+    }
+
     public function postFormRequest()
     {
             $all = Input::all();
@@ -68,43 +102,6 @@ class HomeController extends BaseController {
             return Redirect::to('/#contact')
                     ->with('successRequest', 'Сообщение отправлено');
     }
-
-//old
-    public function showWelcome()
-    {
-        $slides = Slider::where('status', 1)->get();
-        return View::make('home.index')->with('slides',$slides);
-    }
-
-    public function getPage($type, $slug=''){
-
-        $type_post = Type::where('type', $type)->first();
-
-        if(empty($type_post)){
-            //var_dump('empty($type)'); die();
-            $post = Post::where('slug', $type)->first();
-            // var_dump( $post ); die();
-            return View::make('home.page')->with('row', $post);
-        }
-
-        $posts = Post::where('type_id',$type_post->id)->where('status',1)->where('parent',0)->orderBy('created_at', 'desc')->get();
-        $posts_child = $parent = array();
-
-        if($slug!=''){
-            $parent = Post::where('slug',$slug)->first();
-            $posts_child = Post::where('type_id',$type_post->id)->where('status',1)->where('parent','=',$parent->id)->orderBy('created_at', 'desc')->get();
-        }
-
-        $view = array(
-            'type'=>$type_post,
-            'posts'=>$posts,
-            'row' => $parent,
-            'posts_child' => $posts_child,
-        );
-        return View::make('home.'.$type_post->template, $view);
-    }
-
-
 
     public function autocomplete($type, $street_id=''){
         $term = Input::get('term');

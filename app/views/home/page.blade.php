@@ -8,22 +8,29 @@
 
     <div id="content" class="container">
 
-        @if(isset($posts)&&count($posts)>0)
-            <div class="col-xs-12 col-sm-2">
+    <?// var_dump($posts); ?>
 
-                <ul class="menu-page">
+
+
+        @if(isset($posts)&&count($posts)>0)
+            <div class="col-xs-12 col-sm-3">
+
+                <ul class="menu-page nav nav-pills nav-stacked">
                     @foreach($posts as $post)
                         <li {{ (Request::is( $type->type.'/'.$post->slug)) ? 'class="active"' : '' }} >{{ HTML::link('/'.$type->type.'/'.$post->slug, $post->name) }}</li>
                     @endforeach
                 </ul>
 
             </div>
-            <div class="col-xs-12 col-sm-8">
-                <p class="page-title">{{ $type->title }}</p>
+        @endif
 
-                @if(!empty($type->text) && empty($row))
-                    {{ $type->text }}
-                @endif
+        <div class="col-xs-12 col-sm-9">
+            @if(!empty($type->text) && empty($row))
+                {{ $type->text }}
+            @endif
+
+            @if(isset($posts)&&count($posts)>0)
+                <p class="page-title">{{ $type->title }}</p>
 
                 @if(!empty($row->text))
                     {{ $row->text }}
@@ -48,14 +55,12 @@
                     @endforeach
                 @endif
 
-            </div>
-
-        @else
-            @if(!empty($row->text))
-                {{ $row->text }}
+            @else
+                @if(!empty($row->text))
+                    {{ $row->text }}
+                @endif
             @endif
-        @endif
-
+        </div>
     </div>
 
 @stop

@@ -36,8 +36,8 @@ p{font-size: 15px;}
 a{color: #000; font-weight: bold;}
 a:hover{color: #000;}
 
-h1{text-shadow:0 -2px 9px #fff;}
-h2{text-transform: uppercase; font-size: 34px; text-align: center;}
+header h1{text-shadow:0 -2px 9px #fff;}
+section h2{text-transform: uppercase; font-size: 34px; text-align: center;}
 
 .col-xs-1-5, .col-sm-1-5, .col-md-1-5, .col-lg-1-5 {  position: relative;  min-height: 1px;  padding-right: 10px;  padding-left: 10px;}
 .col-xs-1-5 { width: 20%;  float: left;}
@@ -129,11 +129,11 @@ header .navbar-toggle .icon-bar { background-color: #fff;}
     -o-transform: rotate(-15deg); /* Для Opera */
     transform: rotate(-15deg);
    }
-
-#contact{background: #646464; padding-bottom: 50px; color: #fff}
+#contact{background: #646464 url('/img/bg/contacts_bg.jpg') no-repeat; background-size:cover;   padding-bottom: 50px; color: #fff}
 #contact .btn{width: 100%; background: #c9c097;}
 #contact h2{margin: 50px 0;}
 #contact input{background: #e1e1e1;}
+#contact a{color: #fff; font-size: 26px;}
 
 footer{background: #3c4047; padding: 50px 0; color: #fff;}
 footer .title-h1{text-transform: uppercase; font-weight: bold;}
@@ -147,3 +147,8 @@ footer .title{font-weight: bold; border-bottom: 1px solid #707070; padding-botto
   #slider .head-slide .block{min-height: 130px;}
   #slider .head-slide .sm-hr{border-bottom: 1px solid #fff;}
 }
+
+
+/*pages*/
+.nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover{background-color: #a67e4a}
+.menu-page{margin-top: 20px;}
