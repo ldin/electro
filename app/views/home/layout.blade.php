@@ -21,12 +21,15 @@
         <div class="container top-block">
             <div class="row">
                 <div class="col-xs-12 col-sm-8">
-                    <h1>Электромонтаж + <span>свет, звук и все-все-все</span></h1>
+                    <h1><a href="/"> Электромонтаж + <span>свет, звук и все-все-все</span></a></h1>
                     <p>Любая электротехника. <br> Проектирование и монтаж.</p>
                 </div>
                 <div class="col-sm-4 col-xs-12 address">
                     <p>Москва и <br>Московская область</p>
-                    <p><a href="">+7 909 624 6404</a> <br>cenoura@yandex.ru</p>
+                    <p>
+                        <a href="tel:+79096246404">+7 909 624 64 04 </a><br> 
+                        <a href="mailto:cenoura@yandex.ru">cenoura@yandex.ru</a>
+                    </p>    
                 </div>
             </div>
         </div>
@@ -73,7 +76,7 @@
                     <p>Любая электроника</p>
                     <p>Проектирование и монтаж</p>
                 </div>
-                <div class="col-sm-1-5 col-xs-12">
+                <!-- <div class="col-sm-1-5 col-xs-12">
                     <p class="title">О компании</p>
                     <p>Портфолио</p>
                     <p>Сертификаты</p>
@@ -90,10 +93,13 @@
                     <p>Партнерская программа</p>
                     <p>Скидки</p>
                     <p>Гарантии</p>
-                </div>
-                <div class="col-sm-1-5 col-xs-12">
+                </div> -->
+                <div class="col-sm-1-5 col-xs-12 col-sm-offset-6">
                     <p>Москва и <br>Московская область</p>
-                    <p>+7 909 624 64 04 <br> cenoura@yandex.ru</p>
+                    <p>
+                        <a href="tel:+79096246404">+7 909 624 64 04 </a><br> 
+                        <a href="mailto:cenoura@yandex.ru">cenoura@yandex.ru</a>
+                    </p>
                 </div>
             </div>
         </div>
