@@ -154,4 +154,4 @@ footer a{color: #fff;}
 /*pages*/
 .nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover{background-color: #a67e4a}
 .menu-page{margin-top: 20px;}
-
+.nav-pills>li>a {border-radius:0;}

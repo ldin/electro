@@ -13,7 +13,7 @@
 
 
         @if(isset($posts)&&count($posts)>0)
-            <div class="col-xs-12 col-sm-3">
+            <div class="col-xs-12 col-sm-2">
 
                 <ul class="menu-page nav nav-pills nav-stacked">
                     @foreach($posts as $post)
@@ -23,7 +23,7 @@
 
             </div>
 
-            <div class="col-xs-12 col-sm-9">
+            <div class="col-xs-12 col-sm-10">
 
         @elseif(!isset($posts)&&count($posts)==0)
 
