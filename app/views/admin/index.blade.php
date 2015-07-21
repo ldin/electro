@@ -10,12 +10,12 @@
                 <h2>Категории</h2>
             </a>
         </div>
-        <div class="col-xs-6 col-sm-4 block">
+<!--         <div class="col-xs-6 col-sm-4 block">
             <a href="/admin/slider">
                 <img src="/img/admin/picture.png">
                 <h2>Слайдер</h2>
             </a>
-        </div>
+        </div> -->
         <div class="col-xs-6 col-sm-4 block">
             <a href="/admin/settings">
                 <img src="/img/admin/configuration.png">

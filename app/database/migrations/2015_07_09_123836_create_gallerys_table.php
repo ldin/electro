@@ -12,9 +12,9 @@ class CreateGallerysTable extends Migration {
 	 */
 	public function up()
 	{
-        Schema::create('gallerys', function ($table){
+        Schema::create('galleries', function ($table){
             $table->increments('id');
-            $table->smallInteger('type_id');
+            $table->smallInteger('post_id');
             $table->string('slug');
             $table->string('name');
             $table->string('title');
@@ -39,7 +39,7 @@ class CreateGallerysTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('gallerys');//
+		Schema::drop('galleries');//
 	}
 
 }

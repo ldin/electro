@@ -45,7 +45,7 @@
         </div>
 
         <div class="row">
-        {{--
+        <!--
             <div class="form-group col-sm-6 col-xs-12">
                 <div class="checkbox">
                   <label>
@@ -53,7 +53,7 @@
                     Закрыть от индексации роботами
                   </label>
                 </div>
-            </div> --}}
+            </div> -->
             <div class="form-group col-sm-6 col-xs-12">
                 <div class="checkbox">
                   <label>
@@ -70,10 +70,10 @@
         </div>
 
         <div class="row">
-{{--             <div class="form-group col-sm-8 col-xs-12">
+<!--             <div class="form-group col-sm-8 col-xs-12">
                 {{ Form::label('inputPreview', 'Превью') }}
                 {{Form::textarea('preview', (isset($row->preview)?$row->preview:''), array('class' => 'form-control ', 'id'=>'inputPreview', 'rows'=>'5')); }}
-            </div> --}}
+            </div> -->
             <div class="form-group col-sm-4 col-xs-12">
                 {{ Form::label('inputImage', 'Изображение') }}
                 {{ Form::file('image') }}
@@ -96,7 +96,7 @@
             {{ Form::text('keywords', (isset($row->keywords)?$row->keywords:''), array('class' => 'form-control')); }}
         </div>
         <br />
-        {{ Form::label('', '') . Form::submit('Сохранить', array( 'class' => 'btn btn-inverse')) }}
+        {{ Form::label('', '') . Form::submit('Сохранить', array( 'class' => 'btn btn-success')) }}
         @if(isset($row['id']))
               {{ HTML::link('/admin/delete/page/'.$type_id.'/'.$row['id'], 'Удалить', array('class' => 'btn btn-danger', 'onClick' =>"return window.confirm('Вы уверены что хотите удалить статью?')")) }}
         @endif
@@ -104,6 +104,8 @@
     </div>
     {{ Form::close() }}
 </div>
+
+ @include('admin.post-gallery')
 
 @stop
 

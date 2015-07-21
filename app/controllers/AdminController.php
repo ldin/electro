@@ -43,19 +43,17 @@ class AdminController extends BaseController {
          );
 
         $templates = array(
-                // 'page-img-text'=>'Картинка-текст',
-                // 'page-menu-title'=>'Меню-название',
-                // 'page-text-data'=>'Текст-дата',
-                // 'page-rate'=>'Тарифы',
+                'gallery'=>'Галлерея',
                 'page'=>'Текст',
         );
 
-
+        //добавляем категорию
         if($type_id=='type' && $id=='add'){
               $view['templates'] = $templates;
             return View::make('admin.post-type', $view);
         }
-
+        
+        //редактируем категорию
         if($id=='edit'){
             $post = Type::where('id', $type_id)->first();
 
@@ -64,14 +62,17 @@ class AdminController extends BaseController {
             return View::make('admin.post-type', $view);
         }
 
-        else if($id){
+        //добавляем или редактируем страницу
+        else if(is_numeric($id)||$id=='add'){
             $post = Post::find($id);
+            $galleries = Gallery::where('post_id', $id)->get();
 
             //$parent = array();
             $parent[0]= '';
             foreach ($posts as $value) {
                 if($value->id!=$id){$parent[$value['id']]= $value['name'];}
             }
+            $view['galleries'] = $galleries;
             $view['parent'] = $parent;
             $view['row'] = $post;
 
@@ -162,160 +163,59 @@ class AdminController extends BaseController {
             return Redirect::to('/admin/content/'.$type_id)
                     ->with('success', 'Изменения сохранены');
         }
-//добавление и редактирование тарифов интернет
-    public function getPostRateInet() {
 
-        $type_id=Type::where('type', 'rate')->first()->id;
-        $posts = Post::where('type_id', '=', $type_id)->where('parent', '=', '0')->orderBy('created_at', 'desc')->get();
-        $posts_child = Post::where('type_id', '=', $type_id)->where('parent', '!=', '0')->orderBy('created_at', 'desc')->get();
-
-        $inet = Rate::where('type', 'inet')->first();
-        $inetOption = Rate::where('type', 'inetOption')->orderBy('position', 'asc')->get();
-        $row = array(
-            'inet'=>json_decode($inet->description),
-            'inetOption'=>$inetOption,
-        );
-        $view = array(
-            'posts' => $posts,
-            'posts_child' => $posts_child,
-            'type_id' => $type_id,
-            'row'=> $row,
-         );
-        return View::make('admin.post-rate-inet', $view);
-    }
-
-    public function postPostRateInet() {
-        $all = Input::all();
-        //var_dump($all); die();
-
-        //ищем и сохраняем таблицу тарифов
-        $inet = Rate::where('type', 'inet')->first();
-        if(empty($inet)){
-            $inet = new Rate();
-            $inet->name = 'table price inet';
-            $inet->type = 'inet';
-        }
-        $inet->description = json_encode($all['rateInet']);
-        $inet->save();
-
-        //добавляем дополнительные опции, определяем сортировку
-        $sort = 0;
-        foreach ($all['inetOption'] as $key => $value) {
-            if(!empty($value['name'])){
-                if(empty($value['id'])){
-                    $check = new Rate();
-                    $check->type = 'inetOption';
-                    $check->status = 1;
-                } else{
-                    $check = Rate::where('type','inetOption')->where('id', $value['id'])->first();
-                }
-                $check->price = $value['price'];
-                $check->name = $value['name'];
-                $check->description = $value['description'];
-                $check->position = $sort++;
-                $check->save();
-            }
-        }
-
-        return Redirect::to('/admin/post-rate-inet/')
-                ->with('success', 'Изменения сохранены');
-    }
-
-    public function postRateItemDelete() {
-        $all = Input::all();
-        $item = Rate::where('type', $all['type'])->where('id',  $all['elem-id'])->delete();
-        return ;
-    }
-
-    public function postRateItemImplicit() {
-        $all = Input::all();
-        $item = Rate::where('type', $all['type'])->where('id',  $all['elem-id'])->first();
-        $item->status = $all['value'];
-        $item->save();
-        return ;
-    }
-
-//добавление и редактирование тарифов TV
-    public function getPostRateTv() {
-
-        $type_id=Type::where('type', 'rate')->first()->id;
-        $posts = Post::where('type_id', '=', $type_id)->where('parent', '=', '0')->orderBy('created_at', 'desc')->get();
-        $posts_child = Post::where('type_id', '=', $type_id)->where('parent', '!=', '0')->orderBy('created_at', 'desc')->get();
-
-        $tv = Rate::where('type', 'tv')->orderBy('position', 'asc')->get();
-
-        $view = array(
-            'posts' => $posts,
-            'posts_child' => $posts_child,
-            'type_id' => $type_id,
-            'row'=> $tv,
-         );
-        return View::make('admin.post-rate-tv', $view);
-    }
-
-    public function getEditItemTv($id='add') {
-
-        $type_id=Type::where('type', 'rate')->first()->id;
-        $posts = Post::where('type_id', '=', $type_id)->where('parent', '=', '0')->orderBy('created_at', 'desc')->get();
-        $posts_child = Post::where('type_id', '=', $type_id)->where('parent', '!=', '0')->orderBy('created_at', 'desc')->get();
-
-        $row = Rate::find($id);
-
-        $view = array(
-            'posts' => $posts,
-            'posts_child' => $posts_child,
-            'type_id' => $type_id,
-            'row'=> $row,
-         );
-        return View::make('admin.post-edit-rate-tv', $view);
-    }
-
-    public function postPostRateTv() {
-        $all = Input::all();
-        //сохраняем сортировку
-        $sort = 0;
-        foreach ($all['tv'] as $key => $value) {
-            if(!empty($value['id'])){
-                $check = Rate::where('type','tv')->where('id', $value['id'])->first();
-                $check->position = $sort++;
-                $check->save();
-            }
-        }
-
-        return Redirect::to('/admin/post-rate-tv/')
-                ->with('success', 'Изменения сохранены');
-    }
-
-    public function postEditItemTv($id='add')
+public function postImageGallery($type_id, $post_id, $image_id='add')
         {
             $all = Input::all();
-            $rules = array(
-                'name' => 'required|min:2|max:255',
-            );
-            $validator = Validator::make($all, $rules);
-            if ( $validator -> fails() ) {
-                return Redirect::to('/admin/edit-item-tv/'.$id)
-                        ->withErrors($validator)
-                        ->withInput()
-                        ->with('error', 'Ошибка');
-            }
-            if(is_numeric($id))   {
-                $item = Rate::find($id);
+            if($image_id=='add'){
+                $rules = array(
+                    'image' => 'required',
+                );
+
+                $validator = Validator::make($all, $rules);
+                if ( $validator -> fails() ) {
+                    return Redirect::to('/admin/content/'.$type_id.'/'.$post_id.'/#image-'.$image_id)
+                            ->withErrors($validator)
+                            ->withInput()
+                            ->with('error-img'.$image_id, 'Ошибка');
+                }
+            }    
+            if(!is_numeric($post_id)){return false;}
+
+            if(is_numeric($image_id))   {
+                $post = Gallery::find($image_id);
+                // var_dump($post); die(); 
             }
             else {
-                $item = new Rate();
-                $item->type = 'tv';
-                $item->status = 1;
+                $post = new Gallery();
+                $post->post_id = $post_id;
             }
-            $item->name = $all['name'];
-            $item->subject = $all['subject'];
-            $item->price = $all['price'];
-            $item->description = $all['description'];
-            $item->save();
+            $post->text = $all['text'];
+            $post->alt = $all['alt'];
+            
+            // $post->status = isset($all['status'])?true:false;
+            if(!empty($all['image'])){
+                $full_name = Input::file('image')->getClientOriginalName();
+                $filename=$full_name;
+                $path = 'upload/gallery/'.$post_id.'/';
+                $path_sm = 'upload/gallery/'.$post_id.'/small/';
+                if(!is_dir($path_sm)){
+                    mkdir($path_sm, 0777, true);
+                }
+                Input::file('image')->move($path, $filename);
+                $post->image = $path.$filename;
 
-            return Redirect::to('/admin/post-rate-tv')
-                    ->with('success', 'Изменения сохранены');
+                // $img = Image::make($path.$filename)->resize(300, 200);
+                Image::make($path.$filename)->resize(300, null, function ($constraint) {
+                    $constraint->aspectRatio();
+                })->save($path_sm.$filename);
+                $post->small_image = $path_sm.$filename;
+            }
+            $post->save();
+            return Redirect::to('/admin/content/'.$type_id.'/'.$post_id.'/#image-'.$image_id)
+                    ->with('success-img'.$image_id, 'Изменения сохранены');
         }
+
 
 //удаление страниц
     public function getDelete($type, $type_id, $id){
@@ -333,6 +233,14 @@ class AdminController extends BaseController {
                 $slide = User::find($id)->delete();
                 $redir = '/admin/user';
                 break;
+            case 'image':
+                $slide = Gallery::find($id)->first();;
+                unlink($slide->image);
+                unlink($slide->small_image);
+                $slide->delete();
+                // $redir = '/admin/content/'.$type_id;
+                return Redirect::back();
+                break;    
         }
 
         return Redirect::to($redir);

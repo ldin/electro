@@ -25,7 +25,7 @@
 
             <div class="col-xs-12 col-sm-10">
 
-        @elseif(!isset($posts)&&count($posts)==0)
+        @elseif(!isset($posts)||count($posts)==0)
 
             <div class="col-xs-12">
 

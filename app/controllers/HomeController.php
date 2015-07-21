@@ -32,27 +32,32 @@ class HomeController extends BaseController {
     public function getPage($type, $slug=''){
 
         $type_post = Type::where('type', $type)->first();
+        $posts_child = $galleries = $posts = $parent = array();
 
-        if(empty($type_post)){
-            //var_dump('empty($type)'); die();
-            $post = Post::where('slug', $type)->first();
-            // var_dump( $post ); die();
-            return View::make('home.page')->with('row', $post);
+
+        if(empty($type_post)||$type_post->template=='gallery'){
+            $parent = Post::where('slug', $type)->first();
+            $type_post = Type::where('id', $parent->type_id)->first();
+            $galleries = Gallery::where('post_id', $parent->id)->get();
         }
+        else{
 
-        $posts = Post::where('type_id',$type_post->id)->where('status',1)->where('parent',0)->orderBy('created_at', 'desc')->get();
-        $posts_child = $parent = array();
+            $posts = Post::where('type_id',$type_post->id)->where('status',1)->where('parent',0)->orderBy('created_at', 'desc')->get();
 
-        if($slug!=''){
-            $parent = Post::where('slug',$slug)->first();
-            $posts_child = Post::where('type_id',$type_post->id)->where('status',1)->where('parent','=',$parent->id)->orderBy('created_at', 'desc')->get();
+            if($slug!=''){
+                $parent = Post::where('slug',$slug)->first();
+                $posts_child = Post::where('type_id',$type_post->id)->where('status',1)->where('parent','=',$parent->id)->orderBy('created_at', 'desc')->get();
+                $galleries = Gallery::where('post_id', $parent->id)->get();
+            }
         }
+        
 
         $view = array(
             'type'=>$type_post,
             'posts'=>$posts,
             'row' => $parent,
             'posts_child' => $posts_child,
+            'galleries' => $galleries,
         );
         return View::make('home.'.$type_post->template, $view);
     }

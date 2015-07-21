@@ -32,3 +32,5 @@
 .menu ul{list-style: none;}
 .menu ul li a{ background: #F5F5F5; font-size: 12px;}
 .menu ul li a:hover{ background: #e4e4e4;}
+
+#gallery img{max-height: 150px;}
