@@ -122,6 +122,9 @@ return array(
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
 
+		'Barryvdh\Debugbar\ServiceProvider',
+		'Intervention\Image\ImageServiceProvider'
+
 	),
 
 	/*
@@ -188,6 +191,9 @@ return array(
 		'URL'             => 'Illuminate\Support\Facades\URL',
 		'Validator'       => 'Illuminate\Support\Facades\Validator',
 		'View'            => 'Illuminate\Support\Facades\View',
+
+		'Debugbar' => 'Barryvdh\Debugbar\Facade',
+		'Image' => 'Intervention\Image\Facades\Image'
 
 	),
 
