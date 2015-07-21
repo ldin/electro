@@ -22,9 +22,16 @@
                 </ul>
 
             </div>
+
+            <div class="col-xs-12 col-sm-9">
+
+        @elseif(!isset($posts)&&count($posts)==0)
+
+            <div class="col-xs-12">
+
         @endif
 
-        <div class="col-xs-12 col-sm-9">
+        
             @if(!empty($type->text) && empty($row))
                 {{ $type->text }}
             @endif
