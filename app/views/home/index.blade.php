@@ -2,6 +2,12 @@
 
 @section('title') Электромонтаж в загородных домах Москвы и Московской области @stop
 
+@section('header')
+    <!-- {{ HTML::style('/css/animate.css'); }} -->
+    <link href="/js/story-box/animate.css" rel="stylesheet" type="text/css">
+    <link href="/js/story-box/story-box-zen.css" rel="stylesheet" type="text/css"> 
+@stop
+
 @section('content')
 
 
@@ -10,7 +16,7 @@
             <div class="row head-slide">
                 
                 <div class="col-sm-4 col-xs-12">
-                    <div class="row block">
+                    <div class="row block"  data-sb="fadeInLeftBig" data-sb-hide="bounceOutLeft">
                         <div class="col-xs-9">
                             <h2>Наружные сети </h2>
                             <p>кабельные и воздушные линии, уличное и ландшафтное освещение, ремонт и реконструкция поселковых сетей</p>
@@ -20,7 +26,7 @@
                         </div>
                     </div>
                     <hr>
-                    <div class="row block">
+                    <div class="row block"  data-sb="fadeInLeftBig" data-sb-hide="bounceOutLeft">
                         <div class="col-xs-9">
                             <h2>Электромонтаж</h2>
                             <p>освещение, электропроводка, заземление, молниезащита, организация бесперебойного питания</p>
@@ -30,11 +36,11 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-4 hidden-xs">
+                <div class="col-sm-4 hidden-xs" data-sb="bounceInDown" data-sb-hide="bounceOutLeft">
                     <img src="/img/fish.png" alt="логотип">
                 </div>
                 <div class="col-sm-4 col-xs-12 sm-hr">
-                    <div class="row text-right block">
+                    <div class="row text-right block" data-sb="fadeInRightBig" data-sb-hide="bounceOutLeft">
                         <div class="col-xs-3 ">
                             <img src="/img/fish-safe.png" alt="безопасность">
                         </div>
@@ -44,7 +50,7 @@
                         </div>
                     </div>
                     <hr>
-                    <div class="row text-right block">
+                    <div class="row text-right block" data-sb="fadeInRightBig" data-sb-hide="bounceOutLeft">
                         <div class="col-xs-3 ">
                             <img src="/img/fish-media.png" alt="безопасность">
                         </div>
@@ -57,7 +63,7 @@
             </div>
             <div class="row circles text-center">
                 <div class="col-md-3 col-sm-6 col-xs-12">
-                    <div class="block">
+                    <div class="block" data-sb="bounceInUp" data-sb-hide="bounceOutLeft">
                         <div class="img-circle"><p><b>20 лет</b><br> успешной<br> работы</p></div>
                         <div class="square">
                             <p> У нас 20­летний опыт в сфере устройства коммуникаций загородных домов. Мы  хорошо представляем, к чему приводят нарушения правил устройства электроустановок, ошибки в проектировании или монтаже! </p>
@@ -65,7 +71,7 @@
                     </div>
                 </div>
                 <div class="col-md-3 col-sm-6 col-xs-12">
-                    <div class="block">
+                    <div class="block" data-sb="bounceInDown" data-sb-hide="bounceOutLeft">
                         <div class="img-circle"><p>все<br> работы <b><br>под ключ</b></p></div>
                         <div class="square">
                             <p>
@@ -75,7 +81,7 @@
                     </div>
                 </div>
                 <div class="col-md-3 col-sm-6 col-xs-12">
-                    <div class="block">
+                    <div class="block" data-sb="bounceInUp" data-sb-hide="bounceOutLeft">
                         <div class="img-circle"><p><b>гарантия</b><br> качества<br> и сроков</p></div>
                         <div class="square">
                             <p>
@@ -85,7 +91,7 @@
                     </div>
                 </div>
                 <div class="col-md-3 col-sm-6 col-xs-12">
-                    <div class="block">
+                    <div class="block" data-sb="bounceInDown" data-sb-hide="bounceOutLeft">
                         <div class="img-circle"><p class=" text-center">комфорт<br> и безопасность <br><b>обеспечены</b></p></div>
                         <div class="square">
                             <p>
@@ -101,15 +107,15 @@
         <div class="container text-center">
             <h2>Мы обслуживаем:</h2>
             <div class="row">
-                <div class="col-sm-4 col-xs-12">
+                <div class="col-sm-4 col-xs-12" data-sb="fadeInUp" data-sb-hide="bounceOutLeft">
                     <img src="/img/house.png" alt="Небольшие садовые домики">
                     <p>Небольшие садовые домики</p>
                 </div>
-                <div class="col-sm-4 col-xs-12">
+                <div class="col-sm-4 col-xs-12"  data-sb="fadeInDown" data-sb-hide="bounceOutLeft">
                     <img src="/img/house-kottage.png" alt="Пригородные коттеджи">
                     <p>Пригородные коттеджи</p>
                 </div>
-                <div class="col-sm-4 col-xs-12">
+                <div class="col-sm-4 col-xs-12" data-sb="fadeInUp" data-sb-hide="bounceOutLeft">
                     <img src="/img/house-villa.png" alt="Большие загородные имения">
                     <p>Большие загородные имения</p>
                 </div>
@@ -123,7 +129,7 @@
                     <h2>Мы производим весь комплекс электромонтажных работ и монтаж всех сопутствующих коммуникаций:</h2>
                     <hr>
                     <div class="row">
-                        <div class="col-sm-6 col-xs-12">
+                        <div class="col-sm-6 col-xs-12" data-sb="fadeInUp" data-sb-hide="bounceOutLeft">
                             <ul>
                                 <li>интернет,</li>
                                 <li>телевидение,</li>
@@ -133,7 +139,7 @@
                                 <li>охранная и пожарная сигнализация.</li>
                             </ul>
                         </div>
-                        <div class="col-sm-6 col-xs-12">
+                        <div class="col-sm-6 col-xs-12"  data-sb="fadeInUp" data-sb-hide="bounceOutLeft">
                             <p>
                                 Отдельно осуществляются <b>работы по организации резервного электроснабжения</b> всего объекта или части особо важных потребителей с помощью дизельных или бензиновых электрогенераторов либо источников бесперебойного питания.
                             </p>
@@ -151,17 +157,17 @@
         <div class="container">
             <h2 class="text-center">Наше преимущество:<br> <span>надежный рабочий процесс</span></h2>
             <div class="row">
-                <div class="col-sm-4 col-xs-12">
+                <div class="col-sm-4 col-xs-12" data-sb="bounceInLeft" data-sb-hide="bounceOutLeft">
                     <p class="txt-light">
                         Работы на объектах ведутся под наблюдением инженера по эксплуатации. </p>
                     <p>
                         В процессе работы составляется подробная исполнительная схема с обязательными привязками ­ размерами точного местонахождения скрытых коммуникаций
                     </p>
                 </div>
-                <div class="col-sm-4 hidden-xs">
+                <div class="col-sm-4 hidden-xs"  data-sb="bounceInUp" data-sb-hide="bounceOutLeft">
                     <img src="/img/engene_qr.png" alt="инженер">
                 </div>
-                <div class="col-sm-4 col-xs-12">
+                <div class="col-sm-4 col-xs-12" data-sb="bounceInRight" data-sb-hide="bounceOutLeft">
                     <p>
                         <span class="txt-light">Выполнив работы в полном объеме мы не бросаем Заказчика</span>, а заключаем сервисный договор, проводим необходимые для безопасной эксплуатации регламентные работы ­ проверки, измерения, замену некорректно работающей защитной аппаратуры.
                         Если таковая будет выявлена в течении гарантийного срока фирмы­изготовителя, то ее <span class="txt-light">замена осуществляется бесплатно.</span>
@@ -169,8 +175,8 @@
                 </div>
             </div>
             <div class="text-center">
-                <a href="#" class="btn btn-yellow">Заказать звонок</a>
-                <a href="#" class="btn btn-yellow">Оставить заявку</a>
+                <a href="#" class="btn btn-yellow" data-sb="bounceInLeft" data-sb-hide="bounceOutLeft">Заказать звонок</a>
+                <a href="#" class="btn btn-yellow" data-sb="bounceInRight" data-sb-hide="bounceOutLeft">Оставить заявку</a>
             </div>
         </div>
     </section>
@@ -178,7 +184,7 @@
         <div class="container">
             <h2>Схема работы</h2>
             <div class="row">
-                <div class="col-sm-1-5 col-xs-12">
+                <div class="col-sm-1-5 col-xs-12" data-sb="flipInX" data-sb-hide="bounceOutLeft">
                     <div class="ch-img">
                         <p class="img-circle">1</p>
                         <p>Оформление Вашего заказа</p>
@@ -187,7 +193,7 @@
                         <p>Сделайте заказ, позвонив по телефону <br><a href="tel:+79096246404">8 909 624 64 04</a> или <a href="#contact">оставьте заявку на нашем сайте</a></p>
                     </div>
                 </div>
-                <div class="col-sm-1-5 col-xs-12">
+                <div class="col-sm-1-5 col-xs-12" data-sb="flipInX" data-sb-hide="bounceOutLeft">
                     <div class="ch-img">
                         <p class="img-circle">2</p>
                         <p>Коммерческое предложение</p>
@@ -196,7 +202,7 @@
                         <p>Вы получите Коммерческое предложение в течение рабочего дня/p>
                     </div>
                 </div>
-                <div class="col-sm-1-5 col-xs-12">
+                <div class="col-sm-1-5 col-xs-12" data-sb="flipInX" data-sb-hide="bounceOutLeft">
                     <div class="ch-img">
                         <p class="img-circle">3</p>
                         <p>Заключение договора</p>
@@ -205,7 +211,7 @@
                         <p>Мы заключим договор</p>
                     </div>
                 </div>
-                <div class="col-sm-1-5 col-xs-12">
+                <div class="col-sm-1-5 col-xs-12" data-sb="flipInX" data-sb-hide="bounceOutLeft">
                     <div class="ch-img">
                         <p class="img-circle">4</p>
                         <p>Выполнение работы</p>
@@ -214,7 +220,7 @@
                         <p>В рамках договора и в срок мы выполняем всю работу</p>
                     </div>
                 </div>
-                <div class="col-sm-1-5 col-xs-12">
+                <div class="col-sm-1-5 col-xs-12" data-sb="flipInX" data-sb-hide="bounceOutLeft">
                     <div class="ch-img">
                         <p class="img-circle">5</p>
                         <p>Прием</p>
@@ -230,22 +236,22 @@
         <div class="container">
             <h2>Уникальное предложение</h2>
             <div class="row">
-                <div class="col-xs-12 col-sm-3 img">
+                <div class="col-xs-12 col-sm-3 img" data-sb="bounceInRight" data-sb-hide="bounceOutLeft">
                     {{ HTML::image('/img/proposal1.png', 'proposal') }}
                 </div>
-                <div class="col-xs-12 col-sm-3 img">
+                <div class="col-xs-12 col-sm-3 img" data-sb="bounceInLeft" data-sb-hide="bounceOutLeft">
                     {{ HTML::image('/img/proposal2.png', 'proposal') }}
                 </div>
-                <div class="col-xs-12 col-sm-3 img">
+                <div class="col-xs-12 col-sm-3 img" data-sb="bounceInRight" data-sb-hide="bounceOutLeft">
                     {{ HTML::image('/img/proposal3.png', 'proposal') }}
                 </div>
-                <div class="col-xs-12 col-sm-3 img">
+                <div class="col-xs-12 col-sm-3 img" data-sb="bounceInLeft" data-sb-hide="bounceOutLeft">
                     {{ HTML::image('/img/proposal4.png', 'proposal') }}
                 </div>
             </div>
             <div class="row  white-block">
                 <div class="col-xs-12 col-sm-3">
-                    <div class="sale-red">
+                    <div class="sale-red"  data-sb="rotateIn" data-sb-hide="bounceOutLeft">
                         <p>Скидка<br> до 30% </p>
                     </div>
                 </div>
@@ -317,4 +323,7 @@
 
 @section('scripts')
 
+    <script src="/js/story-box/story-box.min.js"></script>
+
 @stop
+
