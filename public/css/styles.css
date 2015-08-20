@@ -70,7 +70,7 @@ section h2{text-transform: uppercase; font-size: 34px; text-align: center;}
 
 header{background:#000 url('/img/bg/TOP-bg.png') no-repeat; background-size:cover;  }
 header .top-block{padding-top:20px; padding-bottom: 25px}
-header .label-txt{font-size: 36px; text-shadow:0 -2px 9px #fff;}
+header .label-txt{font-size: 36px; text-shadow:0 -2px 9px #fff; margin-top: 10px;}
 header .label-txt span{font-size: 24px;}
 header .label-txt a:hover{text-decoration: none;}
 header .address{margin-top: 25px;}
