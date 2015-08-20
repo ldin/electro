@@ -21,7 +21,7 @@
         <div class="container top-block">
             <div class="row">
                 <div class="col-xs-12 col-sm-8">
-                    <h1><a href="/"> Электромонтаж + <span>свет, звук и все-все-все</span></a></h1>
+                    <p class="label-txt"><a href="/"> Электромонтаж + <span>свет, звук и все-все-все</span></a></p>
                     <p>Любая электротехника. <br> Проектирование и монтаж.</p>
                 </div>
                 <div class="col-sm-4 col-xs-12 address">
