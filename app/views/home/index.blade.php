@@ -11,7 +11,7 @@
 @section('content')
 
 
-    <section id="slider">
+    <section id="slider" data-type="background"  data-speed="10">
         <div class="container">
             <div class="row head-slide">
                 
@@ -199,7 +199,7 @@
                         <p>Коммерческое предложение</p>
                     </div>
                     <div class="ch-txt">
-                        <p>Вы получите Коммерческое предложение в течение рабочего дня/p>
+                        <p>Вы получите Коммерческое предложение в течение рабочего дня</p>
                     </div>
                 </div>
                 <div class="col-sm-1-5 col-xs-12" data-sb="flipInX" data-sb-hide="bounceOutLeft">
@@ -269,7 +269,7 @@
             </div>
         </div>
     </section>
-    <section id="contact">
+    <section id="contact" data-type-no="background"  data-speed="10">
         <div class="container">
             <h2>Свяжитесь с нами</h2>
             <div class="row">

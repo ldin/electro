@@ -109,7 +109,7 @@
 
 {{ HTML::script('/js/jquery-1.11.3.min.js') }}
 {{ HTML::script('/js/bootstrap.min.js') }}
-{{'';// HTML::script('/js/main.js') }}
+{{ HTML::script('/js/main.js') }}
 @yield('scripts')
 
 <!-- Yandex.Metrika counter -->

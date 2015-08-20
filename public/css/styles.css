@@ -82,8 +82,8 @@ header .navbar-nav a:hover{color: #a67e4a; }
 header .navbar-nav>.active>a:hover{color: #fff; }
 header .navbar-toggle .icon-bar { background-color: #fff;}
 
-
-#slider{background: url('/img/bg/istart-img.png') no-repeat; background-size:cover; }
+#slider{background: #000 url('/img/bg/Head_bg-1800x1100.jpg')  center 0 no-repeat fixed; background-size: cover; padding: 100px 0 50px; }
+/*#slider{background: url('/img/bg/istart-img.png') no-repeat; background-size:cover; }*/
 #slider .head-slide{border-top: 1px solid #ffedb7; border-bottom: 1px solid #ffedb7;}
 #slider .head-slide p{text-transform: uppercase; font-size: 13px; color: #ffedb7;}
 #slider .head-slide h2{font-size: 28px; color: #fff}
@@ -131,11 +131,14 @@ header .navbar-toggle .icon-bar { background-color: #fff;}
     -o-transform: rotate(-15deg); /* Для Opera */
     transform: rotate(-15deg);
    }
-#contact{background: #646464 url('/img/bg/contacts_bg.jpg') no-repeat; background-size:cover;   padding-bottom: 50px; color: #fff}
+
+/*#contact{background: #000 url('/img/bg/Contacts-bg-1600x1067-1.jpg')  center 0 no-repeat fixed; background-size: cover; background-position: bottom; padding-bottom: 50px; color: #fff }*/
+#contact{background: #000 url('/img/bg/contacts_bg.jpg') no-repeat; background-size:cover;   padding-bottom: 50px; color: #fff}
 #contact .btn{width: 100%; background: #c9c097;}
 #contact h2{margin: 50px 0;}
 #contact input{background: #e1e1e1;}
 #contact a{color: #fff; font-size: 26px;}
+
 
 footer{background: #3c4047; padding: 50px 0; color: #fff;}
 footer .title-h1{text-transform: uppercase; font-weight: bold;}
@@ -143,7 +146,7 @@ footer .title{font-weight: bold; border-bottom: 1px solid #707070; padding-botto
 footer a{color: #fff;}
 
 @media (max-width: 768px) {
-  h2{ font-size: 25px;}
+  section h2{ font-size: 25px;}
   #slider .head-slide h2 {font-size: 20px}
   #slider .head-slide .text-right {text-align: left;}
   #slider .head-slide .block{min-height: 130px;}
